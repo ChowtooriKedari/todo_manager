@@ -21,20 +21,12 @@ class UsersController < ApplicationController
   end
 
   def login
-    check_value = 0
     check_email = params[:email]
     check_password = params[:password]
-    User.find_each do |record|
-      if ("#{record.email}" == check_email)
-        if ("#{record.password}" == check_password)
-          check_value = 1
-        end
-      end
-    end
-    if check_value == 1
-      render plain: "true"
-    else
-      render plain: "false"
-    end
+   if(User.where(["email = ? and password = ?", check_email, check_password]).exists?)
+   render plain: "true"
+   else
+   render plain: "false"
+   end
   end
 end
