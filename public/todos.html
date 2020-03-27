@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Todo Management App</title>
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="todo-app.css" />
+  </head>
+  <body>
+    <main class="TodoPageMain">
+    <article>
+    <h1 class="TodoPage-title">My Todo-List</h1>
+      <section class="AddTodo" display:flex>
+        <input class="AddTodo-Text" type="text" placeholder="What's Next?" />
+        <input class="AddTodo-Date" type="date" />
+        <input class="AddTodo-Button" type="button" value="Add" />
+      </section>
+      <section class="TodoSection">
+        <div class="TodoSectionTitle" display: flex>
+          <p class="TodoSectionTitle-text">Due Today</p>
+          <p class="TodoSectionTitle-remainingCount">0/4</p>
+        </div>
+        <ul>
+        <li class="TodoItem">
+          <label class="TodoItem-container">
+              <input class="TodoItem-checkbox" type="checkbox">
+              Submit SaaS 201 Project
+              <p Class="TodoItem-overduelabel">Overdue</p>
+              <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
+            </label>
+          </li>
+        <li class="TodoItem">
+          <label class="TodoItem-container">
+            <input class="TodoItem-checkbox" type="checkbox">
+            Call Accountant
+            <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
+          </label>
+        </li>
+      </ul>
+      </section>
+      <section class="TodoSection">
+        <div class="TodoSectionTitle" display: flex>
+          <p class="TodoSectionTitle-text">Due Tomorrow</p>
+          <p class="TodoSectionTitle-remainingCount">0/1</p>
+        </div>
+        <ul>
+        <li class="TodoItem">
+          <label class="TodoItem-container">
+              <input class="TodoItem-checkbox" type="checkbox">
+              Type Something
+              <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
+            </label>
+          </li>
+      </ul>
+      </section>
+      <section class="TodoSection">
+        <div class="TodoSectionTitle" display: flex>
+          <p class="TodoSectionTitle-text">Remaining</p>
+          <p class="TodoSectionTitle-remainingCount">0/3</p>
+        </div>
+        <ul>
+        <li class="TodoItem">
+          <label class="TodoItem-container">
+              <input class="TodoItem-checkbox" type="checkbox">
+              Type Something April 1
+              <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
+            </label>
+          </li>
+          <li class="TodoItem">
+            <label class="TodoItem-container">
+                <input class="TodoItem-checkbox" type="checkbox">
+                Type Something April 2
+                <img  class="TodoItem-delete"src="t.png" alt="Delete Icon" height="20" width="20">
+              </label>
+            </li>
+            <li class="TodoItem">
+              <label class="TodoItem-container">
+                  <input class="TodoItem-checkbox" type="checkbox">
+                  Type Something April 3
+                  <img class="TodoItem-delete"src="t.png" alt="Delete Icon" height="20" width="20">
+                </label>
+              </li>
+      </ul>
+      </section>
+    </article>
+  </main>
+  </body>
+</html>
