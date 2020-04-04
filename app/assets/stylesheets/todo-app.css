@@ -112,3 +112,6 @@ ol {
   line-height: 1.4;
   font-weight: bold;
 }
+.strikethrough {
+  text-decoration: line-through;
+}

@@ -51,5 +51,4 @@ ActiveRecord::Schema.define(version: 2020_03_14_184624) do
     t.string "email"
     t.string "password"
   end
-
 end
