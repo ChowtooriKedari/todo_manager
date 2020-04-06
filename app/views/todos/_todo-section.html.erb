@@ -1,45 +1,32 @@
  <section class="TodoSection">
         <div class="TodoSectionTitle" display: flex>
-          <p class="TodoSectionTitle-text"><%=section_title%></p>
-          <p class="TodoSectionTitle-remainingCount"><%= todos.completed.count %> / <%=todos.count%></p>
+           <p class="TodoSectionTitle-text"><%=section_title%></p>
+           <p class="TodoSectionTitle-remainingCount"><%= todos.completed.count %> / <%=todos.count%></p>
         </div>
         <ul>
          <% todos.each do |todo|%>
            <li class="TodoItem">
            <label class="TodoItem-container">
-              <% if section_title!="Overdue" %>
+              <% if strike_value %>
                 <%if todo.completed%>
-                  <input class="TodoItem-checkbox" type="checkbox" checked>
-                  <p class="strikethrough"><%= todo.todo_text%></p>
-                  <%if show_due_date%>
-                        <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short)%></p>
-                  <%end%>
-                  <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
+                    <input class="TodoItem-checkbox" type="checkbox" checked>
+                    <p class="strikethrough"><%= todo.todo_text%></p>
                 <%end%>
-             <%end%>
-
-              <% if section_title!="Overdue" %>
                 <%if !todo.completed%>
-                  <input class="TodoItem-checkbox" type="checkbox" >
+                    <input class="TodoItem-checkbox" type="checkbox" >
+                    <%= todo.todo_text%>
+                <%end%>
+                <%if show_due_date%>
+                      <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short)%></p>
+                <%end%>
+                      <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
+              <%end%>
+               <% if !strike_value %>
+                  <input class="TodoItem-checkbox" type="checkbox">
                   <%= todo.todo_text%>
                   <%if show_due_date%>
                     <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short)%></p>
-                  <%end%>
-                  <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
-                <%end%>
-              <%end%>
-
-
-
-
-
-
-               <% if section_title=="Overdue" && !todo.completed%>
-                <input class="TodoItem-checkbox" type="checkbox">
-                <%= todo.todo_text%>
-                <%if show_due_date%>
-                  <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short)%></p>
-                <%end%>
+                  <% end %>
                 <img class="TodoItem-delete" src="t.png" alt="Delete Icon" height="20" width="20">
               <%end%>
             </label>
