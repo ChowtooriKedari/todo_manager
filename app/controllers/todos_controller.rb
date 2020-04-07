@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
 
   def index
     # render plain: Todo.order(:id).map { |todo| todo.to_pleasant_string }.join("\n")
@@ -17,8 +17,14 @@ class TodosController < ApplicationController
     todo_text = params[:todo_text]
     due_date = DateTime.parse(params[:due_date])
     new_todo = Todo.create!(todo_text: todo_text, due_date: due_date, completed: false)
-    text = "New Todo is created with new ID value #{new_todo.id}"
-    render plain: text
+    redirect_to todos_path
+  end
+
+  def destroy
+    id = params[:id]
+    todo = Todo.find(id)
+    todo.destroy
+    redirect_to todos_path
   end
 
   def update
@@ -27,6 +33,6 @@ class TodosController < ApplicationController
     todo = Todo.find(id)
     todo.completed = completed
     todo.save!
-    render plain: "Updated Todo completed status to #{completed}"
+    redirect_to todos_path
   end
 end
