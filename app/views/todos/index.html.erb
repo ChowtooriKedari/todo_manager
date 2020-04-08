@@ -1,29 +1,28 @@
-    <main class="TodoPageMain">
+  <main class="TodoPageMain">
     <article>
-    <h1 class="TodoPage-title">My Todo-List</h1>
-
-      <%= form_with(url: "/todos", method: "post", class:"AddTodo") do %>
-         <%= text_field_tag(:todo_text,nil, class:'AddTodo-Text', placeholder: "What's Next?" )%>
-         <%= date_field_tag(:due_date, "Todo's Date", class:"AddTodo-Date") %>
-         <%= button_tag('Add',type:"Submit",class:"AddTodo-Button")%>
-      <%end%>
-       <%= render partial:"todo-section",locals: {
-         section_title: "Due Today",
-         todos: Todo.duetoday,
-         show_due_date:false,
-         strike_value:true
-         }%>
-       <%= render partial:"todo-section",locals: {
-         section_title: "Overdue",
-         todos: Todo.overdue,
-         show_due_date:true,
-         strike_value:false
-         }%>
-       <%= render partial:"todo-section",
-       locals: {section_title: "Due Later",
-         todos: Todo.duelater,
-         show_due_date:true,
-         strike_value:true
-         }%>
-</article>
-  </main>
+       <h1 class="TodoPage-title">My Todo-List</h1>
+          <%= form_with(url: "/todos", method: "post", class:"AddTodo") do %>
+             <%= text_field_tag(:todo_text,nil, class:'AddTodo-Text', placeholder: "What's Next?" )%>
+             <%= date_field_tag(:due_date, "Todo's Date", class:"AddTodo-Date") %>
+             <%= button_tag('Add',type:"Submit",class:"AddTodo-Button")%>
+           <%end%>
+         <%= render partial:"todo-section",locals: {
+                    section_title: "Due Today",
+                    todos: Todo.duetoday,
+                    show_due_date:false,
+                    strike_value:true
+              }%>
+         <%= render partial:"todo-section",locals: {
+                    section_title: "Overdue",
+                    todos: Todo.overdue,
+                    show_due_date:true,
+                    strike_value:false
+                  }%>
+         <%= render partial:"todo-section",locals: {
+                    section_title: "Due Later",
+                    todos: Todo.duelater,
+                    show_due_date:true,
+                    strike_value:true
+                  }%>
+    </article>
+</main>
