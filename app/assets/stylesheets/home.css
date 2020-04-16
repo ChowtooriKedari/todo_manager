@@ -1,10 +1,15 @@
 .Home-Title {
   margin-bottom: 30px;
   font-size: 20px;
+  font-family: "Lucida Sans", Verdana, sans-serif;
+  font-weight: lighter;
+  color: teal;
 }
 .Home-authenticate {
   margin-bottom: 20px;
   font-size: 16px;
+  font-weight: lighter;
+  color: tomato;
 }
 .UserHeader {
   padding: 10px;
