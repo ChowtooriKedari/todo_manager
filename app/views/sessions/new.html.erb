@@ -4,12 +4,16 @@
 
 
     <div class="Form-section">
-      <p class="FormInput-label">Email ID :</p>
-      <%= form.email_field :email, class: "form-data"%>
+        <p class="FormInput-label">Email ID :</p>
+          <%= form.email_field :email,
+                      class: "form-data"
+          %>
     </div>
      <div class="Form-section">
-      <p class="FormInput-label">Password :</p>
-      <%= form.password_field :password, class: "form-data"%>
+        <p class="FormInput-label">Password :</p>
+          <%= form.password_field :password,
+                          class: "form-data"
+          %>
     </div>
       <div class="Form-section">
       <%= form.submit "Sign-In", class: "form-submit"%>

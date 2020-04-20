@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoManager</title>
+    <title>Todo Manager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,10 +17,8 @@
          </p>
      <%end%>
      <% if flash[:error] %>
-        <p class="Flash">
-        <%= flash[:error] %>
-        </p>
-     <%end%>
+        <p class="Flash" ><%= flash[:error] %></p>
+     <% end %>
     <%= yield %>
   </body>
 </html>

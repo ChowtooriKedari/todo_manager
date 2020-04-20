@@ -2,20 +2,33 @@
 <section class="newuser">
 <%= form_with url: users_path do |form| %>
     <div class="Form-section">
-      <p class="FormInput-label">First name :</p>
-      <%= form.text_field :first_name,class: "form-data" %>
+        <p class="FormInput-label">First name :</p>
+          <%= form.text_field :first_name,
+                placeholder: "Firstname",
+                      class: "form-data",
+                      autofocus: "autofocus"
+          %>
     </div>
     <div class="Form-section">
-      <p class="FormInput-label">Last name :</p>
-      <%= form.text_field :last_name, class: "form-data"%>
+        <p class="FormInput-label">Last name :</p>
+          <%= form.text_field :last_name,
+               placeholder: "Lastname",
+                     class: "form-data"
+      %>
     </div>
     <div class="Form-section">
       <p class="FormInput-label">Email ID :</p>
-      <%= form.email_field :email, class: "form-data"%>
+          <%= form.email_field :email,
+                placeholder: "Email Id",
+                      class: "form-data"
+          %>
     </div>
      <div class="Form-section">
       <p class="FormInput-label">Password :</p>
-      <%= form.password_field :password, class: "form-data"%>
+          <%= form.password_field :password,
+                     placeholder: "Password",
+                           class: "form-data"
+          %>
     </div>
       <div class="Form-section">
       <%= form.submit "Sign-up", class: "form-submit"%>
